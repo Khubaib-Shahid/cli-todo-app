@@ -1,8 +1,7 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
-//  ✓ 
-let arr = [chalk.blue.bgWhite.bold(" Add Todo + "), chalk.white.bgRed.bold(" Exit "), "hello ✓ "];
+let arr = [chalk.blue.bgWhite.bold(" Add Todo + "), chalk.white.bgRed.bold(" Exit ")];
 async function todoList() {
     let todo = await inquirer.prompt([
         { name: "todos", type: "list", choices: arr }
@@ -32,12 +31,12 @@ async function todoList() {
             todoList();
         }
         else if (action.option === "Tick") {
-            if (todo.todos.includes("✓")) {
-                arr.splice(arr.indexOf(todo.todos), 1, todo.todos.replace(chalk.green(" ✓ "), ""));
+            if (todo.todos.includes("*")) {
+                arr.splice(arr.indexOf(todo.todos), 1, todo.todos.replace(chalk.green(" * "), ""));
                 todoList();
             }
             else {
-                arr.splice(arr.indexOf(todo.todos), 1, todo.todos + chalk.green(" ✓ "));
+                arr.splice(arr.indexOf(todo.todos), 1, todo.todos + chalk.green(" * "));
                 todoList();
             }
         }

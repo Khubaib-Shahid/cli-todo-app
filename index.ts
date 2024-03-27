@@ -37,11 +37,11 @@ if (todo.todos === chalk.blue.bgWhite.bold(" Add Todo + ")) {
         arr.splice(arr.indexOf(todo.todos), 1, edit.edit);
         todoList();
     } else if (action.option === "Tick") {
-        if (todo.todos.includes("✓")) {
-            arr.splice(arr.indexOf(todo.todos), 1, todo.todos.replace(chalk.green(" ✓ "), ""));
+        if (todo.todos.includes("*")) {
+            arr.splice(arr.indexOf(todo.todos), 1, todo.todos.replace(chalk.green(" * "), ""));
             todoList();
         } else {
-        arr.splice(arr.indexOf(todo.todos), 1, todo.todos + chalk.green(" ✓ "));
+        arr.splice(arr.indexOf(todo.todos), 1, todo.todos + chalk.green(" * "));
         todoList();
         }
     }
